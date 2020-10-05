@@ -18,9 +18,15 @@
 	font-weight: 700;
 }
 
+@green: rgb(44, 211, 184);
 @black: #000000;
 @white: #ffffff;
-@bg-grey:rgb(239, 244, 244);
+@dark-blue: #393e6b;
+@gray: #74757b;
+@light-gray: rgba(57, 62, 107, 0.149);
+@white-gray: #aeb1c3;
+
+@bg-gray:rgb(239, 244, 244);
 
 body{
 	margin: 0;
@@ -28,4 +34,693 @@ body{
 	overflow-x: hidden;
 	.ubuntu-reg;
 }
+input,button{
+	outline: none !important;
+}
+h1,h2,h3,h4,h5,h6,p, ul{
+	margin: 0;
+	padding: 0;
+}
+.header{
+	position: relative;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	padding: 0 70px;
+	background: url(assets/img/bg-header.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	box-shadow: 0px 3px 7px 0px rgba(0, 0, 2, 0.25);
+	&__logo{
+		width: 118px;
+		img{
+			width: 118px;
+		}
+	}
+	&__burger{
+		display: none;
+	}
+}
 
+.menu{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 5px;
+	&__right{
+		display: flex;
+		align-items: center;
+	}
+	&__left{
+		display: flex;
+		align-items: center;
+	}
+	&__item{
+		display: block;
+		padding-right: 20px;
+		color: @dark-blue;
+		text-transform: uppercase;
+		&:hover,:visited,:active{
+			color: @dark-blue;
+		}
+	}
+}
+
+.button{
+	display: block;
+	height: 48px;
+	width: 260px;
+	border-radius: 50px;
+	.ubuntu-bold;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	&__green{
+		background-color: @green;
+		color: @white;
+		border: 1px solid @green;
+	}
+	&__blue{
+		background-color: @dark-blue;
+		color: @white;
+		border: 1px solid @dark-blue;
+	}
+	&__blue-border{
+		background-color: inherit;
+		border: 1px solid @dark-blue;
+		color: @dark-blue;
+	}
+}
+.title{
+	.ubuntu-bold;
+	font-size: 30px;
+	color: @dark-blue;
+}
+.text{
+	font-size: 16px;
+	color: rgb(116, 117, 123);
+	line-height: 1.5;
+	color: @gray;
+}
+.content{
+
+}
+.list{
+	padding-left: 0;
+	&__item{
+		list-style-type: none;
+		&:before{
+			position: absolute;
+			color: @dark-blue;
+    		content: "\25CF";
+    		padding-right: 28px;
+			line-height: 36px;
+		}
+	}
+	&__link{
+		display: block;
+		.ubuntu-reg;
+		font-size: 24px;
+		line-height: 36px;
+		padding-left: 30px;
+		color: @green;
+		text-decoration: underline;
+		&:hover,visited, active{
+			color: @green;
+		}
+	}
+	&__descr{
+		padding-left: 30px;
+		color: @gray;
+	}
+}
+
+.install-webim{
+	padding-top: 80px;
+	&__content{
+		background-color: @bg-gray;
+	}
+	&__title{
+		padding-top: 80px;
+		padding-bottom: 40px;
+		font-size: 36px;
+	}
+	&__text{
+		padding-bottom: 55px;
+	}
+	&__buttons{
+		display: flex;
+		padding-bottom: 70px;
+	}
+	&__button-left{
+		margin-right: 20px;
+	}
+	&__button-right{
+	}
+}
+
+.install-easy{
+	&__content{
+	}
+	&__title{
+		padding-top: 75px;
+		padding-bottom: 28px;
+	}
+	&__text{
+		padding-bottom: 100px;
+	}
+	&__items{
+		padding-bottom: 87px;
+		display: flex;
+	}
+	&__item{
+		position: relative;
+		padding-right: 140px;
+	}
+	&__img{
+		width: 50px;
+		height: 50px;
+		margin-bottom: 40px;
+	}
+	&__num{
+		.ubuntu-bold;
+		font-size: 150px;
+		line-height: 150px;
+		color: @light-gray;
+		position: absolute;
+		margin-top: -55px;
+		margin-left: -55px;
+	}
+	&__link{
+		display: block;
+		.ubuntu-reg;
+		font-size: 18px;
+		color: @green;
+		text-decoration: underline;
+		&:hover{
+			color: @green;
+		}
+	}
+}
+
+.install-html{
+	&__content{
+		background-color: @bg-gray;
+	}
+	&__title{
+		padding-top: 85px;
+		padding-bottom: 70px;
+	}
+	&__item{
+		padding-bottom: 50px;
+	}
+	&__link{
+		padding-bottom: 18px;
+	}
+	&__list{
+		padding-bottom: 35px;
+	}
+}
+
+.install-app{
+	&__content{
+	}
+	&__title{
+		padding-top: 80px;
+		padding-bottom: 30px;
+	}
+	&__text{
+		padding-bottom: 70px;
+	}
+	&__item{
+		padding-bottom: 50px;
+	}
+	&__link{
+		padding-bottom: 18px;
+	}
+	&__list{
+		padding-bottom: 30px;
+	}
+}
+
+.steps{
+	&__content{
+		background-color: @bg-gray;
+	}
+	&__title{
+		padding-top: 70px;
+		padding-bottom: 25px;
+	}
+	&__text{
+		padding-bottom: 60px;
+	}
+	&__list{
+	}
+	&__item{
+		padding-bottom: 30px;
+		display: flex;
+		align-items: center;
+	}
+	&__img{
+		max-width: 74px;
+		max-height: 74px;
+		width: 100%;
+		margin-right: 35px;
+	}
+	&__descr{
+		line-height: 24px;
+		.ubuntu-reg;
+		font-size: 18px;
+		color: @dark-blue;
+	}
+	&__num{
+		.ubuntu-bold;
+		font-size: 24px;
+	}
+	&__buttons{
+		display: flex;
+		padding-top: 45px;
+		padding-bottom: 70px;
+	}
+	&__button-left{
+		width: 280px;
+		margin-right: 20px;
+	}
+	&__button-right{
+		width: 280px;
+	}
+}
+
+.social{
+	&__content{
+		padding-bottom: 30px;
+	}
+	&__text{
+		padding-top: 65px;
+		padding-bottom: 70px;
+		font-size: 18px;
+		color: @dark-blue;
+	}
+	&__item{
+		display: flex;
+		align-items: center;
+		padding-bottom: 45px;
+	}
+	&__img{
+		width: 40px;
+		height: 40px;
+		margin-right: 30px;
+	}
+	&__link{
+		display: block;
+		color: @green;
+		font-size: 18px;
+		text-decoration: underline;
+		&:hover{
+			color: @green;
+		}
+	}
+}
+
+.footer{
+	&__content{
+		padding: 50px 70px 60px 70px;
+		background-color: @dark-blue;
+		display: flex;
+	}
+	&__left-col{
+		width: 25%;
+	}
+	&__center-col{
+		width: 50%;
+	}
+	&__right-col{
+		width: 25%;
+	}
+	&__logo{
+		height: 38px;
+		margin-bottom: 20px;
+	}
+	&__text{
+		color: @white-gray;
+	}
+	&__license{
+		color: @white-gray;
+		&:hover{
+			color: @white-gray;
+		}
+	}
+	&__main-contact{
+		display: flex;
+		align-items: center;
+		a{
+			display: block;
+			color: @white;
+		}
+	}
+	&__tel{
+		display: block;
+		color: @white;
+		padding-top: 20px;
+		&:hover{
+			color: @white;
+		}
+	}
+	&__call{
+		width: 30px;
+		height: 30px;
+		margin-right: 12px;
+	}
+	&__img{
+		width: 30px;
+		height: 30px;
+		margin-right: 12px;
+	}
+	&__descr{
+		color: @white-gray;
+	}
+	&__link{
+		display: block;
+		color: @white;
+		&:hover{
+			color: @white;
+		}
+	}
+	&__operating-mode{
+		padding: 15px 0;
+		color: @white-gray;
+	}
+	&__social{
+		display: flex;
+	}
+	&__item{
+		display: block;
+	}
+	&__copyright{
+		display: none;
+	}
+}
+
+.adviser{
+	position: fixed;
+	right: 35px;
+	bottom: 2px;
+	&__content{
+		width: 50px;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #06d6d6;
+		border-radius: 50%;
+		border: 2px solid #1e3775;
+		box-shadow: 0px 3px 7px 0px rgba(0, 0, 2, 0.25);
+		&:hover{cursor: pointer;}
+	}
+	&__img{
+		height: 25px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.header{
+		height: 90px;
+		justify-content: center;
+		padding: 0 30px;
+		background: @white;
+		&__burger{
+			position: absolute;
+			left: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 30px;
+			margin: 0;
+			padding: 0;
+			background: inherit;
+			border: none;
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.menu{
+		position: absolute;
+		left: 0;
+		top: 89px;
+		display: none;
+		background-color: @white;
+		padding-right: 0px;
+		padding-bottom: 30px;
+		box-shadow: 0px 3px 7px -3px rgba(0, 0, 2, 0.25);
+		&__right{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		&__left{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		&__item{
+			padding-right: 0px;
+			padding-top: 15px;
+		}
+	}
+
+	.button{
+		height: 45px;
+		width: 100%;
+		font-size: 14px;
+	}
+	.title{
+		font-size: 24px;
+	}
+	.text{
+		font-size: 14px;
+	}
+
+	.list{
+		&__item{
+			&:before{
+				line-height: 24px;
+				font-size: 14px;
+			}
+		}
+		&__link{
+			font-size: 16px;
+			line-height: 24px;
+			padding-left: 20px;
+		}
+		&__descr{
+			padding-left: 20px;
+			font-size: 12px;
+		}
+	}
+
+	.footer{
+		&__content{
+			padding: 25px 35px;
+		}
+		&__left-col{
+			width: 100%;
+		}
+		&__center-col{
+			display: none;
+		}
+		&__right-col{
+			display: none;
+		}
+		&__logo{
+			display: none;
+		}
+		&__text{
+			font-size: 14px;
+		}
+		&__license{
+			font-size: 14px;
+		}
+		&__copyright{
+			display: inline;
+		}
+	}
+
+	.adviser{
+		display: none;
+	}
+
+	.install-webim{
+		padding-top: 90px;
+		&__content{
+			padding: 0 15px;
+		}
+		&__title{
+			padding-top: 40px;
+			padding-bottom: 30px;
+			font-size: 24px;
+		}
+		&__text{
+			padding-bottom: 45px;
+		}
+		&__buttons{
+			flex-direction: column;
+			padding-bottom: 35px;
+		}
+		&__button-left{
+			margin-right: 0;
+			margin-bottom: 15px;
+		}
+		&__button-right{
+		}
+	}
+
+	.install-easy{
+		&__content{
+			padding: 0 15px;
+		}
+		&__title{
+			padding-top: 45px;
+			padding-bottom: 30px;
+		}
+		&__text{
+			padding-bottom: 50px;
+		}
+		&__items{
+			padding-bottom: 40px;
+		}
+		&__item{
+			padding-left: 25px;
+			padding-right: 40px;
+		}
+		&__img{
+			width: 36px;
+			height: 36px;
+			margin-bottom: 20px;
+		}
+		&__num{
+			font-size: 75px;
+			line-height: 75px;
+			margin-top: -25px;
+			margin-left: -25px;
+		}
+		&__link{
+			font-size: 14px;
+		}
+	}
+
+	.install-html{
+		&__content{
+			padding: 0 15px;
+		}
+		&__title{
+			padding-top: 45px;
+			padding-bottom: 30px;
+		}
+		&__item{
+			padding-bottom: 30px;
+		}
+		&__link{
+			padding-bottom: 18px;
+		}
+		&__list{
+			padding-bottom: 15px;
+		}
+	}
+
+	.install-app{
+		&__content{
+			padding: 0 15px;
+		}
+		&__title{
+			padding-top: 45px;
+			padding-bottom: 30px;
+		}
+		&__text{
+			padding-bottom: 40px;
+		}
+		&__item{
+			padding-bottom: 30px;
+		}
+		&__link{
+			padding-bottom: 18px;
+		}
+		&__list{
+			padding-bottom: 15px;
+		}
+	}
+
+	.steps{
+		&__content{
+			padding: 0 15px;
+		}
+		&__title{
+			padding-top: 45px;
+		}
+		&__text{
+			padding-bottom: 30px;
+		}
+		&__list{
+		}
+		&__item{
+			padding-bottom: 20px;
+		}
+		&__img{
+			display: block;
+			max-width: 50px;
+			max-height: 50px;
+			width: 100%;
+			margin-right: 20px;
+		}
+		&__descr{
+			line-height: 1.5;
+			font-size: 14px;
+		}
+		&__num{
+			font-size: 14px;
+		}
+		&__buttons{
+			flex-direction: column;
+			padding-top: 25px;
+			padding-bottom: 45px;
+		}
+		&__button-left{
+			width: 100%;
+			margin-right: 0px;
+			margin-bottom: 15px;
+		}
+		&__button-right{
+			width: 100%;
+		}
+	}
+
+	.social{
+		&__content{
+			padding: 0 15px 30px 15px;
+		}
+		&__text{
+			padding-top: 45px;
+			padding-bottom: 40px;
+			font-size: 14px;
+		}
+		&__item{
+			padding-bottom: 20px;
+		}
+		&__img{
+			max-width: 40px;
+			max-height: 40px;
+			width: 100%;
+			margin-right: 20px;
+		}
+		&__link{
+			font-size: 14px;
+		}
+	}
+}
