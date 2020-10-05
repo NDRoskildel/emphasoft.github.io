@@ -105,16 +105,28 @@ h1,h2,h3,h4,h5,h6,p, ul{
 		background-color: @green;
 		color: @white;
 		border: 1px solid @green;
+		&:hover,active{
+			color: @green;
+			background-color: inherit;
+		}
 	}
 	&__blue{
 		background-color: @dark-blue;
 		color: @white;
 		border: 1px solid @dark-blue;
+		&:hover,active{
+			color: @dark-blue;
+			background-color: inherit;
+		}
 	}
 	&__blue-border{
 		background-color: inherit;
 		border: 1px solid @dark-blue;
 		color: @dark-blue;
+		&:hover,active{
+			background-color: @dark-blue;
+			color: @white;
+		}
 	}
 }
 .title{
@@ -333,8 +345,9 @@ h1,h2,h3,h4,h5,h6,p, ul{
 		padding-bottom: 45px;
 	}
 	&__img{
-		width: 40px;
-		height: 40px;
+		max-width: 40px;
+		max-height: 40px;
+		width: 100%;
 		margin-right: 30px;
 	}
 	&__link{
@@ -448,6 +461,103 @@ h1,h2,h3,h4,h5,h6,p, ul{
 	}
 }
 
+@media screen and (max-width: 1200px) {
+	.install-easy{
+		&__item{
+			padding-left: 45px;
+			padding-right: 40px;
+		}
+		&__img{
+			margin-bottom: 40px;
+		}
+		&__num{
+			font-size: 120px;
+			line-height: 120px;
+			margin-top: -45px;
+			margin-left: -45px;
+		}
+	}
+}
+
+@media screen and (max-width: 992px){
+	.header{
+		height: 90px;
+		justify-content: center;
+		padding: 0 30px;
+		background: @white;
+		&__burger{
+			position: absolute;
+			left: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 30px;
+			margin: 0;
+			padding: 0;
+			background: inherit;
+			border: none;
+			img{
+				width: 100%;
+			}
+		}
+	}
+	.menu{
+		position: absolute;
+		left: 0;
+		top: 89px;
+		display: none;
+		flex-direction: column;
+		background-color: @white;
+		padding-right: 0px;
+		padding-bottom: 30px;
+		box-shadow: 0px 3px 7px -3px rgba(0, 0, 2, 0.25);
+		&__right{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		&__left{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		&__item{
+			padding-right: 0px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	}
+	.footer{
+		&__content{
+			padding: 25px 35px;
+		}
+		&__left-col{
+			width: 100%;
+		}
+		&__center-col{
+			display: none;
+		}
+		&__right-col{
+			display: none;
+		}
+		&__logo{
+			display: none;
+		}
+		&__text{
+			font-size: 14px;
+		}
+		&__license{
+			font-size: 14px;
+		}
+		&__copyright{
+			display: inline;
+		}
+	}
+	.install-webim{
+		padding-top: 90px;
+	}
+}
+
 @media screen and (max-width: 768px){
 	.header{
 		height: 90px;
@@ -493,12 +603,13 @@ h1,h2,h3,h4,h5,h6,p, ul{
 		&__item{
 			padding-right: 0px;
 			padding-top: 15px;
+			padding-bottom: 0;
 		}
 	}
 
 	.button{
 		height: 45px;
-		width: 100%;
+		// width: 100%;
 		font-size: 14px;
 	}
 	.title{
@@ -575,10 +686,12 @@ h1,h2,h3,h4,h5,h6,p, ul{
 			padding-bottom: 35px;
 		}
 		&__button-left{
+			width: 300px;
 			margin-right: 0;
 			margin-bottom: 15px;
 		}
 		&__button-right{
+			width: 300px;
 		}
 	}
 
@@ -692,12 +805,12 @@ h1,h2,h3,h4,h5,h6,p, ul{
 			padding-bottom: 45px;
 		}
 		&__button-left{
-			width: 100%;
+			width: 300px;
 			margin-right: 0px;
 			margin-bottom: 15px;
 		}
 		&__button-right{
-			width: 100%;
+			width: 300px;
 		}
 	}
 
@@ -721,6 +834,25 @@ h1,h2,h3,h4,h5,h6,p, ul{
 		}
 		&__link{
 			font-size: 14px;
+		}
+	}
+}
+
+@media screen and (max-width: 576px){
+	.install-webim{
+		&__button-left{
+			width: 100%;
+		}
+		&__button-right{
+			width: 100%;
+		}
+	}
+	.steps{
+		&__button-left{
+			width: 100%;
+		}
+		&__button-right{
+			width: 100%;
 		}
 	}
 }
